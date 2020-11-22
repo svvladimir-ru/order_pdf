@@ -63,7 +63,7 @@ class OrderPackagePrinter(object):
         self.order = order
 
     def call(self):
-        file_weas = HTML(filename=f'{name_html}.html').write_pdf(f'{name_html}.pdf')
+        file_weas = HTML(filename=f'{order}.html').write_pdf(f'{order}.pdf')
 
 
 def count_input():
