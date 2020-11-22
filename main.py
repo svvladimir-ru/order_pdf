@@ -9,11 +9,16 @@ class OrderPackagePrinter(object):
         self.order = order
 
     def call(self):
-        with open('order.html', 'w') as file: # создаем файл либо перезаписываем
+        name_html = input('Введите имя файла для html документа без расширения: ')
+        with open(f'{name_html}.html', 'a') as file: # создаем файл либо перезаписываем
+            file.write('<div>')
             for x, y in order.items(): # достаем значения словаря
-                file.write(f' <p>{x} - {y}</p> ')
+                file.write(f' <p>{x} - {y}</p> \n')
+            file.write('</div> \n')
         name = input('Введите имя файла без расширения: ')
-        file_weas = HTML(filename='order.html').write_pdf(f'{name}.pdf') # создаем файл
+        file_weas = HTML(filename=f'{name_html}.html').write_pdf(f'{name}.pdf') # создаем файл
+        # path = os.path.join(os.path.abspath(os.path.dirname(__file__)), f'{name_html}.html') # удаляем старый файл
+        # os.remove(path)
 
 
 if __name__ == '__main__':
