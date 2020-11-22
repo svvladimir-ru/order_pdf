@@ -5,6 +5,7 @@
 Сервис который преобразует введеные данные в html шаблон с тегами <p> и далее преобразует html шаблон в pdf
   
 Дозапись в pdf работает только если происходила дозапись в исходный html файл, а так он меняет содержимое pdf
+Для более красивого выведения ответа в файле pdf запустить main2.py
 
 ### Требования
 
@@ -17,7 +18,7 @@ $ pip install virtualenv
 $ virtualenv 'название виртуального окружения', либо python3 -m venv 'название виртуального окружения'
 $ venv 'название виртуального окружения'/Scripts(или bin для linux)/activate
 $ pip install -r requirements.txt
-$ python main.py
+$ python main.py либо main2.py
 ```
 
 Запуск через докер
@@ -42,6 +43,7 @@ $ sudo apt install docker-ce -y
 3. Ввести данные
 4. Запустить контейнер снова
 5. Командой docker ps узнать container id и через команду docker exec -it <container id> ls можно будет увидить созданые файлы. Через команду cat order.html можно будет просмотреть файл order.html
+6. Что бы запустить main2.py в Dockerfile в строке CMD python /code/main.py заменить main.py на main2.py
 
 
 
