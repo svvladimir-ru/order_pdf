@@ -1,7 +1,7 @@
 from collections import namedtuple
 from weasyprint import HTML, Document
 import datetime as dt
-
+import os
 
 class OrderPackagePrinter(object):
 
