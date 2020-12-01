@@ -131,4 +131,3 @@ if __name__ == '__main__':
     a = File_create(name_html, order_product.lists())
     a.file_name(1)
     count_input()
-    
