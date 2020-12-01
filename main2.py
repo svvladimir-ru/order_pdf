@@ -65,9 +65,10 @@ class File_create(object):
                     d = self.order_product.pop('Дата')
                     if self.order_product.get('Способ доставки'):
                         c = self.order_product.pop('Способ доставки')
-                        file.write(f'<p>   | Номер заказа: {a} | Дата: {d} | Способ доставки: {c} | </p> ')
-                        file.write('___________________________________________________________________________')
-            file.write('<div>|')
+                        file.write(f'<h2>   | Заказ № {a} | Дата: {d} | Способ доставки: {c} | </h2> \n')
+                        file.write('___________________________________________________________________________\n')
+                        file.write(f'<h3>  №  |     Артикул  |    Наименование   |   Количество   | </h3> \n')
+            file.write('<div>\n')
 
             if self.order_product.get('Артикул'):
                 e = self.order_product.pop('Артикул')
@@ -75,8 +76,8 @@ class File_create(object):
                     r = self.order_product.pop('Наименование')
                     if self.order_product.get('Количество'):
                         t = self.order_product.pop('Количество')
-                        file.write(f'<p> {n}  | Артикул: {e} | Наименование: {r} | Количество: {t} | </p> ')
-            file.write('____________________________________________________________________________</div>')
+                        file.write(f'<pre> № {n}  |     {e}     |       {r}     |&nbsp;&nbsp;{t}&nbsp;&nbsp;| </pre> \n')
+            file.write('____________________________________________________________________________</div>\n')
         # path = os.path.join(os.path.abspath(os.path.dirname(__file__)), f'{name_html}.html') # удаляем старый файл
         # os.remove(path)
 
@@ -130,3 +131,4 @@ if __name__ == '__main__':
     a = File_create(name_html, order_product.lists())
     a.file_name(1)
     count_input()
+    
